@@ -40,8 +40,8 @@ scanMultiCovg <- function(session.name, sample.type=NULL, bin.size=10, is.verbos
   
  
   
-  tmp_obj@eSet@rowData <- session.name@exon.info
-  tmp_obj@eSet@colData <- DataFrame(list(sample.name=session.name@sample.info$sample.name[sel_sample_idx],
+  rowData(tmp_obj@eSet) <- session.name@exon.info
+  colData(tmp_obj@eSet) <- DataFrame(list(sample.name=session.name@sample.info$sample.name[sel_sample_idx],
                               sample.type=session.name@sample.info$sample.type[sel_sample_idx],
                               subject.ID=session.name@sample.info$subject.ID[sel_sample_idx]))
   
